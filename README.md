@@ -3,10 +3,20 @@ A library with `custom views` based on `gestures`.
 
 #  Usage:
 
-Add dependency to your `build.gradle` :
+Add `jitpack.io` to your top-level `build.gradle` :
+```groovy
+allprojects {
+ repositories {
+    jcenter()
+    maven { url "https://jitpack.io" }
+ }
+}
+```
+
+Add `dependency` to your app `build.gradle` :
 ```groovy
 dependencies {
-    compile 'com.hrskrs.gesturefunlibrary:gesture-fun:1.0.0'
+    compile 'com.github.hrskrs:GestureFun:1.0.0'
 }
 ```
 

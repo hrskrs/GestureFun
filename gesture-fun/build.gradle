@@ -28,4 +28,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 
-apply from:'../maven.gradle'
+//Jitpack
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.hrskrs'
