@@ -52,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Swipe with threshold 400"
+        android:hint="Swipe with threshold 800"
         custom:hrskrs_swipe_mode="1"
-        custom:hrskrs_threshold="400" />
+        custom:hrskrs_threshold="800" />
 </LinearLayout>

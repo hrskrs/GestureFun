@@ -2,7 +2,8 @@
 A library with `custom views` based on `gestures`.
 
 # Demo
-Here comes a gif
+
+ ![Demo](demo.gif)
 
 You can check samples by downloading this(here comes googplay link) app.
 
@@ -39,8 +40,6 @@ In layout:
     <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:hint="Swipe with threshold 200"
         custom:swipeMode="2"
         custom:threshold="200" />
 ```
