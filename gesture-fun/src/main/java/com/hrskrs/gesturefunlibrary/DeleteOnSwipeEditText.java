@@ -52,13 +52,13 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         editText.setOnTouchListener(this);
 
         if (attrs != null) {
-            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DeleOnSwipeEditText);
-            setHint(ta.getString(R.styleable.DeleOnSwipeEditText_android_hint));
-            int threshold = ta.getInt(R.styleable.DeleOnSwipeEditText_threshold, INVALID);
+            TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DeleteOnSwipeEditText);
+            setHint(ta.getString(R.styleable.DeleteOnSwipeEditText_android_hint));
+            int threshold = ta.getInt(R.styleable.DeleteOnSwipeEditText_hrskrs_threshold, INVALID);
             if (threshold > MIN_THRESHOLD) {
                 DEFAULT_THRESHOLD = threshold;
             }
-            int swipeMode = ta.getInt(R.styleable.DeleOnSwipeEditText_swipeMode, INVALID);
+            int swipeMode = ta.getInt(R.styleable.DeleteOnSwipeEditText_hrskrs_swipe_mode, INVALID);
             if (swipeMode == 1) {
                 DEFAULT_SWIPE = SINGLE_FINGER_SWIPE;
             }

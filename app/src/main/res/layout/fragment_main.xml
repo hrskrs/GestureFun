@@ -17,16 +17,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 200"
-        custom:swipeMode="2"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="2"
+        custom:hrskrs_threshold="200" />
 
     <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 400"
-        custom:swipeMode="2"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="2"
+        custom:hrskrs_threshold="200" />
 
     <View
         android:layout_width="match_parent"
@@ -45,14 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 200"
-        custom:swipeMode="1"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="1"
+        custom:hrskrs_threshold="200" />
 
     <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 400"
-        custom:swipeMode="1"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="1"
+        custom:hrskrs_threshold="200" />
 </LinearLayout>
