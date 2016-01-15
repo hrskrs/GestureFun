@@ -44,9 +44,13 @@ In layout:
 
 Attributes:
 ``` xml
-<!--Swipe threshold => if smaller than default value than the default one will be used => default:200px -->
+<!-- Swipe threshold default value: 200 -->
+<!-- If threshold is smaller than default value, threshold is set to default one -->
+<!-- If threshold exceeds the width of View itself, threshold is set to View width - 10px(padding) -->
 <attr name="hrskrs_threshold" format="integer" /> 
-<!--Swipe mode => swipe with single finger:1, swipe with double finger:2 => Default Value:2 -->
+<!--Swipe mode default value: 2 -->
+<!-- To swipe with single finger set hrskrs_swipe_mode to 1 -->
+<!-- To swipe with double finger set hrskrs_swipe_mode to 2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
 ```
 	
