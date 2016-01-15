@@ -24,7 +24,7 @@ _Note:_ do not add the `jitpack.io` repository under `buildscript`
 Add the `dependency` in your app `build.gradle` :
 ```groovy
 dependencies {
-    compile 'com.github.hrskrs:GestureFun:v.1.0.0'
+    compile 'com.github.hrskrs:GestureFun:1.0'
 }
 ```
 
