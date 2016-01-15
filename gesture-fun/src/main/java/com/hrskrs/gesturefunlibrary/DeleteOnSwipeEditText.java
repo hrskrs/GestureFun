@@ -33,6 +33,8 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
     private int SINGLE_FINGER_SWIPE = 10;
     private int DOUBLE_FINGER_SWIPE = 20;
     private int DEFAULT_SWIPE = DOUBLE_FINGER_SWIPE;
+    //When threshold is equal to width of EditText itself we add 10px padding
+    private int THRESHOLD_PADDING = 10;
 
     private AppCompatEditText editText;
 
@@ -50,13 +52,17 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         inflate(context, R.layout.layout_delete_on_swipe_edit_text, this);
         editText = (AppCompatEditText) getChildAt(0);
         editText.setOnTouchListener(this);
-
+        //Threshold cannot be bigger than EditText itself
+        int MAX_THRESHOLD = editText.getWidth();
         if (attrs != null) {
             TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DeleteOnSwipeEditText);
             setHint(ta.getString(R.styleable.DeleteOnSwipeEditText_android_hint));
             int threshold = ta.getInt(R.styleable.DeleteOnSwipeEditText_hrskrs_threshold, INVALID);
             if (threshold > MIN_THRESHOLD) {
                 DEFAULT_THRESHOLD = threshold;
+            }
+            if (threshold > MAX_THRESHOLD) {
+                DEFAULT_THRESHOLD = MAX_THRESHOLD - THRESHOLD_PADDING;
             }
             int swipeMode = ta.getInt(R.styleable.DeleteOnSwipeEditText_hrskrs_swipe_mode, INVALID);
             if (swipeMode == 1) {

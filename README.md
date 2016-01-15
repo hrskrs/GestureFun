@@ -44,7 +44,9 @@ In layout:
 
 Attributes:
 ``` xml
-<!--Swipe thresold => default:200px => if value is smaller than default value than default value will be used  -->
+<!-- Swipe thresold => default:200px -->
+<!-- If threshold is smaller than default value than default value will be used -->
+<!-- If threshold is larger than the width of the EditText itself, than value will be set to the width of EditText - 10px(padding) -->
 <attr name="hrskrs_threshold" format="integer" /> 
 <!--Swipe mode => swipe with single finger:1, swipe with double finger:2 => Default Value:2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
