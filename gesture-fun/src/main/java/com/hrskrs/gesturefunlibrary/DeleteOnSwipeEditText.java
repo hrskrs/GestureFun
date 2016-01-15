@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * Created by hrskrs
@@ -33,8 +34,8 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
     private int SINGLE_FINGER_SWIPE = 10;
     private int DOUBLE_FINGER_SWIPE = 20;
     private int DEFAULT_SWIPE = DOUBLE_FINGER_SWIPE;
-    //When threshold is equal to width of EditText itself we add 10px padding
-    private int THRESHOLD_PADDING = 10;
+    //When threshold is equal to width of EditText itself we add 100px padding
+    private int THRESHOLD_PADDING = 100;
 
     private AppCompatEditText editText;
 
@@ -51,7 +52,6 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         setOrientation(VERTICAL);
         inflate(context, R.layout.layout_delete_on_swipe_edit_text, this);
         editText = (AppCompatEditText) getChildAt(0);
-        editText.setOnTouchListener(this);
         //Threshold cannot be bigger than EditText itself
         if (attrs != null) {
             TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DeleteOnSwipeEditText);
@@ -66,13 +66,15 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             }
             ta.recycle();
         }
+        //EditText touch listener
+        editText.setOnTouchListener(this);
     }
 
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
         super.onWindowFocusChanged(hasWindowFocus);
-        if (DEFAULT_THRESHOLD > editText.getWidth()) {
-            DEFAULT_THRESHOLD = editText.getWidth() - THRESHOLD_PADDING;
+        if (DEFAULT_THRESHOLD > getWidth()) {
+            DEFAULT_THRESHOLD = getWidth() - THRESHOLD_PADDING;
         }
     }
 
@@ -144,14 +146,14 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
                     break;
                 case MotionEvent.ACTION_UP:
                     //Finger released
-                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD && mode == SWIPE) {
+                    if (Math.abs(stopX - startX) >= DEFAULT_THRESHOLD && mode == SWIPE) {
                         deleteAllText();
                     }
                     mode = NONE;
                     break;
                 case MotionEvent.ACTION_MOVE:
                     stopX = event.getX();
-                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                    if (Math.abs(stopX - startX) >= DEFAULT_THRESHOLD) {
                         mode = SWIPE;
                     }
                     break;
@@ -163,25 +165,36 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         return super.onTouchEvent(event);
     }
 
+    public AppCompatEditText getEditText() {
+        return editText;
+    }
 
     private void deleteAllText() {
         setText("");
-    }
-
-    public CharSequence getText() {
-        return editText.getText();
     }
 
     public void setHint(String hint) {
         editText.setHint(hint);
     }
 
+    public CharSequence getHint() {
+        return editText.getHint();
+    }
+
     public void setText(String text) {
         editText.setText(text);
     }
 
+    public CharSequence getText() {
+        return editText.getText();
+    }
+
     public void setError(CharSequence error) {
         editText.setError(error);
+    }
+
+    public CharSequence getError() {
+        return editText.getError();
     }
 
     public void setBackgroundColor(int color) {
@@ -194,5 +207,38 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
 
     public void setTextColor(int color) {
         editText.setTextColor(color);
+    }
+
+    public void setLayoutParams(LayoutParams params) {
+        editText.setLayoutParams(params);
+    }
+
+    public ViewGroup.LayoutParams getLayputParams() {
+        return editText.getLayoutParams();
+    }
+
+    public void setSwipeMode(int swipeMode) {
+        if (swipeMode == 1) {
+            DEFAULT_SWIPE = SINGLE_FINGER_SWIPE;
+        } else {
+            DEFAULT_SWIPE = DOUBLE_FINGER_SWIPE;
+        }
+    }
+
+    public int getSwipeMode() {
+        if (DEFAULT_SWIPE == SINGLE_FINGER_SWIPE) {
+            return 1;
+        }
+        return 2;
+    }
+
+    public void setThreshold(int threshold) {
+        if (threshold > MIN_THRESHOLD) {
+            DEFAULT_THRESHOLD = threshold;
+        }
+    }
+
+    public int getThreshold() {
+        return DEFAULT_THRESHOLD;
     }
 }

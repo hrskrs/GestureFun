@@ -1,4 +1,4 @@
-# GestureFun
+#GestureFun [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GestureFun-green.svg?style=true)](https://android-arsenal.com/details/1/3084) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10) [![license](https://img.shields.io/badge/license-apache 2.0-lightgrey.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 A library with `custom views` based on `gestures`.
 
 # Demo
@@ -14,7 +14,6 @@ Add `jitpack.io` in your root `build.gradle` :
 ```groovy
 allprojects {
  repositories {
-    jcenter()
     maven { url "https://jitpack.io" }
  }
 }
@@ -24,7 +23,7 @@ _Note:_ do not add the `jitpack.io` repository under `buildscript`
 Add the `dependency` in your app `build.gradle` :
 ```groovy
 dependencies {
-    compile 'com.github.hrskrs:GestureFun:v1.0.0-alpha'
+    compile 'com.github.hrskrs:GestureFun:1.2'
 }
 ```
 
@@ -46,12 +45,23 @@ Attributes:
 ``` xml
 <!-- Swipe threshold default value: 200 -->
 <!-- If threshold is smaller than default value, threshold is set to default one -->
-<!-- If threshold exceeds the width of View itself, threshold is set to View width - 10px(padding) -->
+<!-- If threshold exceeds the width of View itself, threshold is set to View width - 100px(DEFAULT_PADDING) -->
 <attr name="hrskrs_threshold" format="integer" /> 
 <!--Swipe mode default value: 2 -->
 <!-- To swipe with single finger set hrskrs_swipe_mode to 1 -->
 <!-- To swipe with double finger set hrskrs_swipe_mode to 2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
+```
+
+Attributes (Programatically):
+
+```java
+//Setting-Getting swipe mode dynamically
+deleteOnSwipeEditText.setSwipeMode(int);
+deleteOnSwipeEditText.getSwipeMode();
+//Setting-Getting threshold dynamically
+deleteOnSwipeEditText.setThreshold(int);
+deleteOnSwipeEditText.getThreshold();
 ```
 	
 # License
