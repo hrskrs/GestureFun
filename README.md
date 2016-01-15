@@ -28,8 +28,8 @@ dependencies {
 }
 ```
 
-## DeleteOnSwipeEditText:
-You can delete whole text by simply swiping from the left to right or vise versa. 
+### DeleteOnSwipeEditText:
+You can delete whole text by swiping(with single or two fingers) from the left to the right or vise versa. 
 
 In layout:
 
@@ -38,22 +38,17 @@ In layout:
     <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        custom:swipeMode="2"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="2"
+        custom:hrskrs_threshold="200" />
 ```
 
 Attributes:
 ``` xml
-<!-- Swipe thresold => default:200px -->
-<!-- If threshold is smaller than default value than default value will be used -->
-<!-- If threshold is larger than the width of the EditText itself, than value will be set to the width of EditText - 10px(padding) -->
+<!--Swipe threshold => if smaller than default value than the default one will be used => default:200px -->
 <attr name="hrskrs_threshold" format="integer" /> 
 <!--Swipe mode => swipe with single finger:1, swipe with double finger:2 => Default Value:2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
 ```
-# Change Log
-###### v1.0.0
-	Initial release
 	
 # License
 
