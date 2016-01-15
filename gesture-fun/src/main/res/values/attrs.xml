@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="DeleOnSwipeEditText">
-        <attr name="threshold" format="integer"/>
+    <declare-styleable name="DeleteOnSwipeEditText">
+        <attr name="hrskrs_threshold" format="integer" />
+        <attr name="hrskrs_swipe_mode" format="integer" />
         <attr name="android:text" />
         <attr name="android:hint" />
         <attr name="android:inputType" />

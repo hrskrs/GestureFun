@@ -3,19 +3,56 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
-    <com.hrskrs.library.views.DeleteOnSwipeEditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:text="@string/swipe_two"
+        android:textColor="@color/c_1f8a9e" />
+
+    <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:hint="Swipe with threshold 200"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="2"
+        custom:hrskrs_threshold="200" />
 
-    <com.hrskrs.library.views.DeleteOnSwipeEditText
+    <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:hint="Swipe with threshold 400"
-        custom:threshold="200" />
+        custom:hrskrs_swipe_mode="2"
+        custom:hrskrs_threshold="200" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:textColor="@color/c_1f8a9e" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/swipe_single"
+        android:textColor="@color/c_1f8a9e" />
+
+    <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Swipe with threshold 200"
+        custom:hrskrs_swipe_mode="1"
+        custom:hrskrs_threshold="200" />
+
+    <com.hrskrs.gesturefunlibrary.DeleteOnSwipeEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Swipe with threshold 400"
+        custom:hrskrs_swipe_mode="1"
+        custom:hrskrs_threshold="200" />
 </LinearLayout>
