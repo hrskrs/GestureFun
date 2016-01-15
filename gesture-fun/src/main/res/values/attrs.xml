@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DeleOnSwipeEditText">
+        <attr name="threshold" format="integer"/>
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:maxLength" />
+        <attr name="android:minLines" />
+        <attr name="android:maxLines" />
+        <attr name="android:ems" />
+        <attr name="android:gravity" />
+        <attr name="android:enabled" />
+    </declare-styleable>
+</resources>
