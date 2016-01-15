@@ -5,9 +5,7 @@ A library with `custom views` based on `gestures`.
 
  ![Demo](demo.gif)
 
-You can check samples by downloading this(here comes googplay link) app.
-
-Sample app is also included in the repo so you can check the code
+_Note: Sample app is also included in the repo so you can check the code_
 
 
 #  Usage:
