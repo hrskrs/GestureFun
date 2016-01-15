@@ -1,3 +1,5 @@
+[![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10)
+
 # GestureFun
 A library with `custom views` based on `gestures`.
 
