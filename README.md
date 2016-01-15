@@ -29,7 +29,7 @@ dependencies {
 ```
 
 ## DeleteOnSwipeEditText:
-You can delete whole text by simply swiping from the left to right or vise versa. 
+You can delete whole text by swiping(with single or two fingers) from the left to the right or vise versa. 
 
 In layout:
 
