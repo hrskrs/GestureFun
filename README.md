@@ -49,9 +49,6 @@ Attributes:
 <!--Swipe mode => swipe with single finger:1, swipe with double finger:2 => Default Value:2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
 ```
-# Change Log
-###### v1.0.0
-	Initial release
 	
 # License
 
