@@ -27,7 +27,7 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
     private float startX = 0;
     private float stopX = 0;
     //Threshold in pixels
-    private int DEFAULT_THRESHOLD = 100;
+    private int DEFAULT_THRESHOLD = 200;
     private int MIN_THRESHOLD = DEFAULT_THRESHOLD;
     //Single/Double swipe modes
     private int SINGLE_FINGER_SWIPE = 10;

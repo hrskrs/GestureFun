@@ -1,9 +1,17 @@
 # GestureFun
 A library with `custom views` based on `gestures`.
 
+# Demo
+Here comes a gif
+
+You can check samples by downloading this(here comes googplay link) app.
+
+Sample app is also included in the repo so you can check the code
+
+
 #  Usage:
 
-Add `jitpack.io` to your top-level `build.gradle` :
+Add `jitpack.io` in your root `build.gradle` :
 ```groovy
 allprojects {
  repositories {
@@ -12,11 +20,12 @@ allprojects {
  }
 }
 ```
+_Note:_ do not add the `jitpack.io` repository under `buildscript`
 
-Add `dependency` to your app `build.gradle` :
+Add the `dependency` in your app `build.gradle` :
 ```groovy
 dependencies {
-    compile 'com.github.hrskrs:GestureFun:1.0.0'
+    compile 'com.github.hrskrs:GestureFun:v1.0.0-alpha'
 }
 ```
 
@@ -46,11 +55,10 @@ Attributes:
 # Change Log
 ###### v1.0.0
 	Initial release
-	Single finger swipe feature
 	
 # License
 
-    Copyright (C) 2015 Vitalii Ishchuk
+    Copyright (C) 2016 Haris Krasniqi
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

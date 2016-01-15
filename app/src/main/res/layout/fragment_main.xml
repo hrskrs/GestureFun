@@ -26,7 +26,7 @@
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 400"
         custom:hrskrs_swipe_mode="2"
-        custom:hrskrs_threshold="200" />
+        custom:hrskrs_threshold="400" />
 
     <View
         android:layout_width="match_parent"
@@ -54,5 +54,5 @@
         android:layout_margin="10dp"
         android:hint="Swipe with threshold 400"
         custom:hrskrs_swipe_mode="1"
-        custom:hrskrs_threshold="200" />
+        custom:hrskrs_threshold="400" />
 </LinearLayout>
