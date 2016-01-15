@@ -15,7 +15,13 @@ ext {
     developerName = 'Haris Krasniqi'
     developerEmail = 'mrhariskrasniqi@gmail.com'
 
+    siteUrl = 'https://github.com/hrskrs/GestureFun'
+    gitUrl = 'https://github.com/hrskrs/GestureFun.git'
+
     licenseName = 'The Apache Software License, Version 2.0'
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
+
+apply from: 'https://raw.githubusercontent.com/hrskrs/JCenter/master/installBintray.gradle'
+apply from: 'https://raw.githubusercontent.com/hrskrs/JCenter/master/uploadBintray.gradle'
