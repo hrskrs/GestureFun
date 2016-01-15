@@ -29,6 +29,10 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
     //Threshold in pixels
     private int DEFAULT_THRESHOLD = 100;
     private int MIN_THRESHOLD = DEFAULT_THRESHOLD;
+    //Single/Double swipe modes
+    private int SINGLE_FINGER_SWIPE = 10;
+    private int DOUBLE_FINGER_SWIPE = 20;
+    private int DEFAULT_SWIPE = DOUBLE_FINGER_SWIPE;
 
     private AppCompatEditText editText;
 
@@ -53,6 +57,10 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             int threshold = ta.getInt(R.styleable.DeleOnSwipeEditText_threshold, INVALID);
             if (threshold > MIN_THRESHOLD) {
                 DEFAULT_THRESHOLD = threshold;
+            }
+            int swipeMode = ta.getInt(R.styleable.DeleOnSwipeEditText_swipeMode, INVALID);
+            if (swipeMode == 1) {
+                DEFAULT_SWIPE = SINGLE_FINGER_SWIPE;
             }
             ta.recycle();
         }
@@ -92,7 +100,7 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         //No of touches
         int pointerCount = event.getPointerCount();
         //If two finger touch
-        if (pointerCount == 2) {
+        if (pointerCount == 2 && DEFAULT_SWIPE == DOUBLE_FINGER_SWIPE) {
             int action = event.getActionMasked();
             switch (action) {
                 case MotionEvent.ACTION_POINTER_DOWN:
@@ -102,6 +110,29 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
                     break;
                 case MotionEvent.ACTION_POINTER_UP:
                     //Second finger released
+                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                        deleteAllText();
+                    }
+                    mode = NONE;
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    if (mode == SWIPE) {
+                        stopX = event.getX();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        } else if (pointerCount == 1 && DEFAULT_SWIPE == SINGLE_FINGER_SWIPE) {
+            int action = event.getAction();
+            switch (action) {
+                case MotionEvent.ACTION_DOWN:
+                    //Single finger touch
+                    mode = SWIPE;
+                    startX = event.getX();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    //Finger released
                     if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
                         deleteAllText();
                     }
