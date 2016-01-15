@@ -53,7 +53,6 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
         editText = (AppCompatEditText) getChildAt(0);
         editText.setOnTouchListener(this);
         //Threshold cannot be bigger than EditText itself
-        int MAX_THRESHOLD = editText.getWidth();
         if (attrs != null) {
             TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.DeleteOnSwipeEditText);
             setHint(ta.getString(R.styleable.DeleteOnSwipeEditText_android_hint));
@@ -61,14 +60,19 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             if (threshold > MIN_THRESHOLD) {
                 DEFAULT_THRESHOLD = threshold;
             }
-            if (threshold > MAX_THRESHOLD) {
-                DEFAULT_THRESHOLD = MAX_THRESHOLD - THRESHOLD_PADDING;
-            }
             int swipeMode = ta.getInt(R.styleable.DeleteOnSwipeEditText_hrskrs_swipe_mode, INVALID);
             if (swipeMode == 1) {
                 DEFAULT_SWIPE = SINGLE_FINGER_SWIPE;
             }
             ta.recycle();
+        }
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        if (DEFAULT_THRESHOLD > editText.getWidth()) {
+            DEFAULT_THRESHOLD = editText.getWidth() - THRESHOLD_PADDING;
         }
     }
 
@@ -111,19 +115,20 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             switch (action) {
                 case MotionEvent.ACTION_POINTER_DOWN:
                     //Second finger touch
-                    mode = SWIPE;
+                    mode = NONE;
                     startX = event.getX();
                     break;
                 case MotionEvent.ACTION_POINTER_UP:
                     //Second finger released
-                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD && mode == SWIPE) {
                         deleteAllText();
                     }
                     mode = NONE;
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    if (mode == SWIPE) {
-                        stopX = event.getX();
+                    stopX = event.getX();
+                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                        mode = SWIPE;
                     }
                     break;
                 default:
@@ -134,19 +139,20 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
                     //Single finger touch
-                    mode = SWIPE;
+                    mode = NONE;
                     startX = event.getX();
                     break;
                 case MotionEvent.ACTION_UP:
                     //Finger released
-                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD && mode == SWIPE) {
                         deleteAllText();
                     }
                     mode = NONE;
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    if (mode == SWIPE) {
-                        stopX = event.getX();
+                    stopX = event.getX();
+                    if (Math.abs(stopX - startX) > DEFAULT_THRESHOLD) {
+                        mode = SWIPE;
                     }
                     break;
                 default:
@@ -159,7 +165,7 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
 
 
     private void deleteAllText() {
-        editText.setText("");
+        setText("");
     }
 
     public CharSequence getText() {
@@ -168,5 +174,25 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
 
     public void setHint(String hint) {
         editText.setHint(hint);
+    }
+
+    public void setText(String text) {
+        editText.setText(text);
+    }
+
+    public void setError(CharSequence error) {
+        editText.setError(error);
+    }
+
+    public void setBackgroundColor(int color) {
+        editText.setBackgroundColor(color);
+    }
+
+    public void setBackgroundResource(int resId) {
+        editText.setBackgroundResource(resId);
+    }
+
+    public void setTextColor(int color) {
+        editText.setTextColor(color);
     }
 }

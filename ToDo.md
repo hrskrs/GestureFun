@@ -10,3 +10,4 @@
 - [+] Set max threshold based on EditText width
 
 ### Bugs
+- [ ] Disable double finger swipe when single finger is enabled
