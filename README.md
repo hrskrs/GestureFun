@@ -55,7 +55,7 @@ Attributes:
 
 Attributes (Dynamically):
 
-```android
+```java
 //Setting-Getting swipe mode dynamically
 deleteOnSwipeEditText.setSwipeMode(int);
 deleteOnSwipeEditText.getSwipeMode();
