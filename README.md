@@ -14,7 +14,6 @@ Add `jitpack.io` in your root `build.gradle` :
 ```groovy
 allprojects {
  repositories {
-    jcenter()
     maven { url "https://jitpack.io" }
  }
 }
