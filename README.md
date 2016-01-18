@@ -1,4 +1,4 @@
-# GestureFun [![Library](https://img.shields.io/badge/Library-GestureFun-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10)
+# GestureFun [![Library](https://img.shields.io/badge/Library-GestureFun-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun) [![v](https://img.shields.io/badge/v-1.0-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun/releases/tag/1.0) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10)
 A library with `custom views` based on `gestures`.
 
 # Demo
