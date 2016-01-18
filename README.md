@@ -1,4 +1,4 @@
-# GestureFun [![Library](https://img.shields.io/badge/Library-GestureFun-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun) [![v](https://img.shields.io/badge/v-1.0-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun/releases/tag/1.0) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10)
+# GestureFun [![Library](https://img.shields.io/badge/Library-GestureFun-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun) [![v](https://img.shields.io/badge/v-1.1-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun/releases/tag/1.0) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10)
 A library with `custom views` based on `gestures`.
 
 # Demo
@@ -23,7 +23,7 @@ _Note:_ do not add the `jitpack.io` repository under `buildscript`
 Add the `dependency` in your app `build.gradle` :
 ```groovy
 dependencies {
-    compile 'com.github.hrskrs:GestureFun:1.0'
+    compile 'com.github.hrskrs:GestureFun:1.1'
 }
 ```
 
@@ -45,12 +45,23 @@ Attributes:
 ``` xml
 <!-- Swipe threshold default value: 200 -->
 <!-- If threshold is smaller than default value, threshold is set to default one -->
-<!-- If threshold exceeds the width of View itself, threshold is set to View width - 10px(padding) -->
+<!-- If threshold exceeds the width of View itself, threshold is set to View width - 100px(DEFAULT_PADDING) -->
 <attr name="hrskrs_threshold" format="integer" /> 
 <!--Swipe mode default value: 2 -->
 <!-- To swipe with single finger set hrskrs_swipe_mode to 1 -->
 <!-- To swipe with double finger set hrskrs_swipe_mode to 2 -->
 <attr name="hrskrs_swipe_mode" format="integer" />
+```
+
+Attributes (Dynamically):
+
+```android
+//Setting-Getting swipe mode dynamically
+deleteOnSwipeEditText.setSwipeMode(int);
+deleteOnSwipeEditText.getSwipeMode();
+//Setting-Getting threshold dynamically
+deleteOnSwipeEditText.setThreshold(int);
+deleteOnSwipeEditText.getThreshold();
 ```
 	
 # License
