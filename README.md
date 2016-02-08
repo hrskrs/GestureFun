@@ -1,4 +1,4 @@
-#GestureFun [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GestureFun-green.svg?style=true)](https://android-arsenal.com/details/1/3084) [![Library](https://img.shields.io/badge/Library-GestureFun-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun) [![v](https://img.shields.io/badge/v-1.1-blue.svg?style=flat-square)](https://github.com/hrskrs/GestureFun/releases/tag/1.0) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10) [![license](https://img.shields.io/badge/license-apache 2.0-lightgrey.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
+#GestureFun [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GestureFun-green.svg?style=true)](https://android-arsenal.com/details/1/3084) [![API](https://img.shields.io/badge/API-10%2B-brightgreen.svg?style=flat-square)](https://android-arsenal.com/api?level=10) [![license](https://img.shields.io/badge/license-apache 2.0-lightgrey.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 A library with `custom views` based on `gestures`.
 
 # Demo
