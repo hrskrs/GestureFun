@@ -66,8 +66,8 @@ public class DeleteOnSwipeEditText extends LinearLayoutCompat implements View.On
             }
             ta.recycle();
         }
-        //Linear Layout touch listener
-        setOnTouchListener(this);
+        //EditText touch listener
+        editText.setOnTouchListener(this);
     }
 
     @Override
