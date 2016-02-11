@@ -10,7 +10,7 @@ import com.hrskrs.gesturefun.core.BaseFragment;
  */
 public class MainFragment extends BaseFragment {
 
-    public static MainFragment newInstance(){
+    public static MainFragment newInstance() {
         return new MainFragment();
     }
 
