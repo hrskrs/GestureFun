@@ -29,5 +29,5 @@ proguard/
 *com_crashlytics_export_strings.xml
 *crashlytics-build.properties
 #Keystore and their credentials
-gradle.properties
+/gradle.properties
 keystores/
