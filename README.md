@@ -5,6 +5,10 @@ A library with `custom views` based on `gestures`.
 
  ![Demo](demo.gif)
 
+
+You can download demo app from play store also:
+https://play.google.com/store/apps/details?id=com.hrskrs.gesturefun
+
 _Note: Sample app is also included in the repo so you can check the code_
 
 
